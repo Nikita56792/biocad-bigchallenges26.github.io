@@ -1,0 +1,11 @@
+sequence_id	chain_type	v_gene	d_gene	j_gene	region	aa_position	imgt_position	ref_aa	mut_aa	ref_codon	mut_codon	query_nt_pos	is_silent
+CGGAGTCAGACTTTCG-1_contig_2	VK	IGKV3-20*01	N/A	IGKJ2*01	CDR1-IMGT	32	32	S	T	agc	acc	94	no
+CGGAGTCAGACTTTCG-1_contig_2	VK	IGKV3-20*01	N/A	IGKJ2*01	FR2-IMGT	50	55	Y	S	tat	tct	148	no
+CGGAGTCAGACTTTCG-1_contig_2	VK	IGKV3-20*01	N/A	IGKJ2*01	FR3-IMGT	54	66	S	G	agc	ggc	160	no
+CGGAGTCAGACTTTCG-1_contig_2	VK	IGKV3-20*01	N/A	IGKJ2*01	CDR3-IMGT (germline)	94	109	S	S	agc	agt	280	yes
+CGGAGTCAGACTTTCG-1_contig_2	VK	IGKV3-20*01	N/A	IGKJ2*01	CDR3-IMGT (germline)	95	110	S	S	tca	tcc	283	yes
+CACTCCATCTCCAACC-1_contig_2	VK	IGKV3-20*01	N/A	IGKJ2*01	CDR1-IMGT	32	32	S	T	agc	acc	94	no
+CACTCCATCTCCAACC-1_contig_2	VK	IGKV3-20*01	N/A	IGKJ2*01	FR2-IMGT	50	55	Y	S	tat	tct	148	no
+CACTCCATCTCCAACC-1_contig_2	VK	IGKV3-20*01	N/A	IGKJ2*01	FR3-IMGT	54	66	S	G	agc	ggc	160	no
+CACTCCATCTCCAACC-1_contig_2	VK	IGKV3-20*01	N/A	IGKJ2*01	CDR3-IMGT (germline)	94	109	S	S	agc	agt	280	yes
+CACTCCATCTCCAACC-1_contig_2	VK	IGKV3-20*01	N/A	IGKJ2*01	CDR3-IMGT (germline)	95	110	S	S	tca	tcc	283	yes

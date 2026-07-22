@@ -1,0 +1,3 @@
+sequence_id	chain_type	v_gene	d_gene	j_gene	region	aa_position	imgt_position	ref_aa	mut_aa	ref_codon	mut_codon	query_nt_pos	is_silent
+GTTAAGCCAGTTTACG-1_contig_1	VK	IGKV1D-39*01	N/A	IGKJ3*01	FR1-IMGT	15	15	V	V	gta	gtc	43	yes
+ATCTGCCAGACAGAGA-1_contig_1	VK	IGKV1D-39*01	N/A	IGKJ3*01	FR1-IMGT	15	15	V	V	gta	gtc	43	yes

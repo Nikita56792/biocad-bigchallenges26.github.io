@@ -1,0 +1,100 @@
+[2026-07-22T08:28:29+00:00] START mafft_iqtree
+Loaded config from /home/master/BioCad_bd_prod_bdd3f8f/configs/prod_full.json
+
+############################################################
+BIOCAD BCR PIPELINE
+Input:  /home/master/BioCad_bd_prod_bdd3f8f/data/BCR/BCR_data.tsv
+Output: /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree
+Config: grouping=gene, aligner=mafft, tree_method=iqtree, iqtree_model=GTR+F+I+G4, min_group=4
+Steps:  filter, group, filter_groups, verify, msa, shm, iqtree, viz, clades, mutations, mutation_stats, tree_analytics
+############################################################
+
+============================================================
+STEP: Step 1: Filter BCR data
+CMD:  /home/master/software/miniconda3/envs/biocad_bcr_pipeline_environment/bin/python /home/master/BioCad_bd_prod_bdd3f8f/scripts/01_filter_sequences/filter_sequences.py -i /home/master/BioCad_bd_prod_bdd3f8f/data/BCR/BCR_data.tsv -o /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/BCR_data_filtered.tsv -r /home/master/BioCad_bd_prod_bdd3f8f/data/references --filter-mode germline --min-junction 15 --max-junction 300 --v-min-fraction 0.5
+============================================================
+✓ DONE in 0.8s
+
+============================================================
+STEP: Step 2: Group by germlines
+CMD:  /home/master/software/miniconda3/envs/biocad_bcr_pipeline_environment/bin/python /home/master/BioCad_bd_prod_bdd3f8f/scripts/02_group_by_germlines/group_by_germlines.py -i /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/BCR_data_filtered.tsv -o /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/grouped_by_germlines -r /home/master/BioCad_bd_prod_bdd3f8f/data/references --grouping-strategy gene
+============================================================
+✓ DONE in 0.7s
+
+============================================================
+STEP: Step 2b: Filter groups by size
+CMD:  /home/master/software/miniconda3/envs/biocad_bcr_pipeline_environment/bin/python /home/master/BioCad_bd_prod_bdd3f8f/scripts/filter_by_symbol_count/filter_by_symbol_count.py -i /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/grouped_by_germlines/vj -o /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/grouped_by_germlines/vj_filtered --min 4 --max 100000
+============================================================
+✓ DONE in 0.1s
+
+============================================================
+STEP: Step 2c: Verify by amino acid translation
+CMD:  /home/master/software/miniconda3/envs/biocad_bcr_pipeline_environment/bin/python /home/master/BioCad_bd_prod_bdd3f8f/scripts/verify_by_amino/verify_by_amino.py -i /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/grouped_by_germlines/vj_filtered -o /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/verify_by_amino
+============================================================
+✓ DONE in 1.3s
+
+============================================================
+STEP: Step 3: MSA (MAFFT)
+CMD:  /home/master/software/miniconda3/envs/biocad_bcr_pipeline_environment/bin/python /home/master/BioCad_bd_prod_bdd3f8f/scripts/03_multiple_alignment/multiple_alignment.py -i /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/verify_by_amino -o /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/aligned_sequences --aligner mafft --workers 4
+============================================================
+✓ DONE in 73.0s
+
+============================================================
+STEP: Step 3b: SHM hotspots/coldspots
+CMD:  /home/master/software/miniconda3/envs/biocad_bcr_pipeline_environment/bin/python /home/master/BioCad_bd_prod_bdd3f8f/scripts/SHM/SHM_cold_spots_hot_spots.py -i /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/aligned_sequences -o /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/shm_hotspots_coldspots.json
+============================================================
+✓ DONE in 13.9s
+
+============================================================
+STEP: Step 4a: IQ-TREE (ML)
+CMD:  /home/master/software/miniconda3/envs/biocad_bcr_pipeline_environment/bin/python /home/master/BioCad_bd_prod_bdd3f8f/scripts/04a_build_trees_iqtree/build_trees_iqtree.py -i /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/aligned_sequences -o /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/trees --model GTR+F+I+G4 --workers 4
+============================================================
+✓ DONE in 1405.8s
+
+============================================================
+STEP: Step 5: Tree visualization (iqtree)
+CMD:  /home/master/software/miniconda3/envs/biocad_bcr_pipeline_environment/bin/python /home/master/BioCad_bd_prod_bdd3f8f/scripts/visualize_trees/visualize_trees.py -i /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/trees -o /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/trees_visualization/iqtree
+============================================================
+✓ DONE in 33.6s
+
+============================================================
+STEP: Step 6: Confident clades report
+CMD:  /home/master/software/miniconda3/envs/biocad_bcr_pipeline_environment/bin/python /home/master/BioCad_bd_prod_bdd3f8f/scripts/05_clade_search/clade_search.py --out /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/groups/report.json --clades-fasta-dir /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/groups/clades --aligned-dir /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/aligned_sequences --iqtree-dir /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/trees
+============================================================
+✓ DONE in 2.2s
+
+============================================================
+STEP: Step 7: Analyze mutations
+CMD:  /home/master/software/miniconda3/envs/biocad_bcr_pipeline_environment/bin/python /home/master/BioCad_bd_prod_bdd3f8f/scripts/06_analyze_mutations/run_mutations.py -i /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/groups/clades -o /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/mutation_tables -r /home/master/BioCad_bd_prod_bdd3f8f/data/references
+============================================================
+✓ DONE in 272.4s
+
+============================================================
+STEP: Step 8: Mutation statistics and dN/dS
+CMD:  /home/master/software/miniconda3/envs/biocad_bcr_pipeline_environment/bin/python /home/master/BioCad_bd_prod_bdd3f8f/scripts/mutation_stats/mutation_stats.py /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/mutation_tables --tsv /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/mutation_stats.tsv
+============================================================
+✓ DONE in 0.6s
+
+============================================================
+STEP: Step 9: Tree analytics
+CMD:  /home/master/software/miniconda3/envs/biocad_bcr_pipeline_environment/bin/python /home/master/BioCad_bd_prod_bdd3f8f/scripts/tree_analytics/tree_analytics.py -i /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/groups/report.json -o /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree/tree_analytics.png
+============================================================
+✓ DONE in 2.3s
+
+############################################################
+PIPELINE COMPLETE in 1806.7s
+Report: /home/master/BioCad_bd_prod_bdd3f8f/results/prod_full_4modes_20260722_6783067/mafft_iqtree
+  ✓ filter
+  ✓ group
+  ✓ filter_groups
+  ✓ verify
+  ✓ msa
+  ✓ shm
+  ✓ iqtree
+  ✓ viz
+  ✓ clades
+  ✓ mutations
+  ✓ mutation_stats
+  ✓ tree_analytics
+############################################################
+[2026-07-22T08:58:41+00:00] COMPLETE mafft_iqtree

@@ -1,0 +1,7 @@
+sequence_id	chain_type	v_gene	d_gene	j_gene	region	aa_position	imgt_position	ref_aa	mut_aa	ref_codon	mut_codon	query_nt_pos	is_silent
+TGCTGCTAGACCACGA-1_contig_2	VH	IGHV4-39*02	IGHD2-21*01	IGHJ4*02	FR3-IMGT	79	85	H	Q	cac	cag	235	no
+TGCTGCTAGACCACGA-1_contig_2	VH	IGHV4-39*02	IGHD2-21*01	IGHJ4*02	CDR3-IMGT (germline)	99	106	R	K	aga	aaa	295	no
+TGCTGCTAGACCACGA-1_contig_2	VH	IGHV4-39*02	IGHD2-21*01	IGHJ4*02	FR4-IMGT	2	119	L	P	ctt	cct	321	no
+CCGTTCAAGTACATGA-1_contig_2	VH	IGHV4-39*02	IGHD2-21*01	IGHJ4*02	FR3-IMGT	79	85	H	Q	cac	cag	235	no
+CCGTTCAAGTACATGA-1_contig_2	VH	IGHV4-39*02	IGHD2-21*01	IGHJ4*02	CDR3-IMGT (germline)	99	106	R	K	aga	aaa	295	no
+CCGTTCAAGTACATGA-1_contig_2	VH	IGHV4-39*02	IGHD2-21*01	IGHJ4*02	FR4-IMGT	2	119	L	P	ctt	cct	321	no

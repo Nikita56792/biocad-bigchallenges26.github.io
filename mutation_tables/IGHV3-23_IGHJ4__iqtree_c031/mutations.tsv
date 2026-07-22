@@ -1,0 +1,5 @@
+sequence_id	chain_type	v_gene	d_gene	j_gene	region	aa_position	imgt_position	ref_aa	mut_aa	ref_codon	mut_codon	query_nt_pos	is_silent
+TCATTTGGTCACCTAA-1_contig_1	VH	IGHV3-23*04	IGHD3-9*01	IGHJ4*02	FR2-IMGT	35	40	S	N	agc	aac	103	no
+TCATTTGGTCACCTAA-1_contig_1	VH	IGHV3-23*04	IGHD3-9*01	IGHJ4*02	FR2-IMGT	50	55	A	V	gct	gtt	148	no
+AGAGCGAGTATTAGCC-1_contig_1	VH	IGHV3-23*04	IGHD3-9*01	IGHJ4*02	FR2-IMGT	50	55	A	G	gct	ggt	148	no
+AGAGCGAGTATTAGCC-1_contig_1	VH	IGHV3-23*04	IGHD3-9*01	IGHJ4*02	FR3-IMGT	64	71	V	M	gtg	atg	190	no

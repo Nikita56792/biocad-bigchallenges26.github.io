@@ -1,0 +1,8 @@
+sequence_id	chain_type	v_gene	d_gene	j_gene	region	aa_position	imgt_position	ref_aa	mut_aa	ref_codon	mut_codon	query_nt_pos	is_silent
+TGTGGTAGTATCAGTC-1_contig_1	VK	IGKV3-15*01	N/A	IGKJ2*04	FR3-IMGT	70	83	E	D	gag	gac	208	no
+TGTGGTAGTATCAGTC-1_contig_1	VK	IGKV3-15*01	N/A	IGKJ2*04	FR3-IMGT	87	100	Y	F	tac	ttc	259	no
+TGTGGTAGTATCAGTC-1_contig_1	VK	IGKV3-15*01	N/A	IGKJ2*04	CDR3-IMGT (germline)	93	109	N	K	aac	aag	277	no
+TGTGGTAGTATCAGTC-1_contig_1	VK	IGKV3-15*01	N/A	IGKJ2*04	FR4-IMGT	7	124	K	K	aag	aaa	307	yes
+AAACGGGTCGTACGGC-1_contig_2	VK	IGKV3-15*01	N/A	IGKJ2*04	FR1-IMGT	2	2	I	V	ata	gta	4	no
+AAACGGGTCGTACGGC-1_contig_2	VK	IGKV3-15*01	N/A	IGKJ2*04	FR3-IMGT	87	100	Y	F	tac	ttc	259	no
+AAACGGGTCGTACGGC-1_contig_2	VK	IGKV3-15*01	N/A	IGKJ2*04	CDR3-IMGT (germline)	93	109	N	K	aac	aag	277	no

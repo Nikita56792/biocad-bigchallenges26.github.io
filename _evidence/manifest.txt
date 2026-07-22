@@ -1,0 +1,11 @@
+started_at=2026-07-22T08:28:29+00:00
+host=bc-a100-07.hpc-a100.local
+repo=/home/master/BioCad_bd_prod_bdd3f8f
+git_revision=6783067e3d2f1ea5b0f1c9393371f59769e0fe67
+input=/home/master/BioCad_bd_prod_bdd3f8f/data/BCR/BCR_data.tsv
+input_sha256=5705ffd2929434ffced8fba6c1640385b9597e0cca3ec1879fcf87f6f6bed9f1
+config=/home/master/BioCad_bd_prod_bdd3f8f/configs/prod_full.json
+config_sha256=e28150fc98829447f2207b0e89200d1d33bfcad7bc70a93629c01ff11a83cc73
+gpu_mrbayes_bin=/home/master/software/mrbayes-gpu/bin/mb
+beagle_lib_dir=/home/master/software/beagle-cuda/lib
+mode=mafft_iqtree exit_code=0

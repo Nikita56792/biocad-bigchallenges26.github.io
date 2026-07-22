@@ -1,0 +1,4 @@
+sequence_id	chain_type	v_gene	d_gene	j_gene	fr1_muts	cdr1_muts	fr2_muts	cdr2_muts	fr3_muts	cdr3_muts	fr4_muts	total_muts
+CTCGTCATCAAACGGG-1_contig_2	VH	IGHV3-23*04	IGHD2-21*02	IGHJ4*02	0	0	0	0	4	0	1	5
+GGCCGATAGGTGTTAA-1_contig_2	VH	IGHV3-23*04	IGHD3-16*01	IGHJ4*02	1	1	0	2	4	0	2	10
+CAGAGAGCATGACATC-1_contig_2	VH	IGHV3-23*04	IGHD3-16*01	IGHJ4*02	1	1	1	2	5	0	2	12
